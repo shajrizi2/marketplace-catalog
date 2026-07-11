@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<products>
+  <product>
+    <title>Nova X Smartphone</title>
+    <description>5G smartphone with a bright OLED display.</description>
+    <category>Electronics | Phones | Smartphones</category>
+    <sku>PHONE-001</sku>
+    <price>699.99</price>
+    <stock>12</stock>
+  </product>
+  <product>
+    <title>Nova X Smartphone Pro</title>
+    <description>Premium 5G smartphone with an enhanced camera.</description>
+    <category>Electronics | Phones | Smartphones</category>
+    <sku>PHONE-002</sku>
+    <price>899.00</price>
+    <stock>5</stock>
+  </product>
+  <product>
+    <title>Essential Feature Phone</title>
+    <description>Compact phone with long battery life.</description>
+    <category>Electronics | Phones | Feature Phones</category>
+    <sku>PHONE-003</sku>
+    <price>49.50</price>
+    <stock>0</stock>
+  </product>
+  <product>
+    <title>Titan 15 Gaming Laptop</title>
+    <description>High-performance laptop with dedicated graphics.</description>
+    <category>Electronics | Laptops | Gaming Laptops</category>
+    <sku>LAPTOP-001</sku>
+    <price>1499.99</price>
+    <stock>4</stock>
+  </product>
+  <product>
+    <title>Titan 17 Gaming Laptop</title>
+    <description>Large-screen gaming laptop for desktop-class performance.</description>
+    <category>Electronics | Laptops | Gaming Laptops</category>
+    <sku>LAPTOP-002</sku>
+    <price>1899.00</price>
+    <stock>2</stock>
+  </product>
+  <product>
+    <title>Feather 13 Ultrabook</title>
+    <description>Lightweight laptop designed for travel and office work.</description>
+    <category>Electronics | Laptops | Ultrabooks</category>
+    <sku>LAPTOP-003</sku>
+    <price>999.95</price>
+    <stock>8</stock>
+  </product>
+  <product>
+    <title>Barista One Coffee Machine</title>
+    <description>Compact espresso machine with a steam wand.</description>
+    <category>Home | Kitchen | Coffee Machines</category>
+    <sku>COFFEE-001</sku>
+    <price>249.99</price>
+    <stock>10</stock>
+  </product>
+  <product>
+    <title>Barista One Coffee Grinder</title>
+    <description>Adjustable burr grinder for fresh coffee beans.</description>
+    <category>Home | Kitchen | Coffee Grinders</category>
+    <sku>COFFEE-002</sku>
+    <price>89.90</price>
+    <stock>14</stock>
+  </product>
+  <product>
+    <title>Daily Drip Coffee Machine</title>
+    <description>Programmable coffee maker for twelve cups.</description>
+    <category>Home | Kitchen | Coffee Machines</category>
+    <sku>COFFEE-003</sku>
+    <price>79.00</price>
+    <stock>0</stock>
+  </product>
+  <product>
+    <title>Smart Air Fryer</title>
+    <description>Connected air fryer with six cooking programs.</description>
+    <category>Home | Kitchen | Small Appliances</category>
+    <sku>KITCHEN-001</sku>
+    <price>129.99</price>
+    <stock>7</stock>
+  </product>
+  <product>
+    <title>Ergonomic Office Chair</title>
+    <description>Adjustable chair with breathable mesh support.</description>
+    <category>Home | Office | Chairs</category>
+    <sku>OFFICE-001</sku>
+    <price>319.00</price>
+    <stock>6</stock>
+  </product>
+  <product>
+    <title>Standing Desk</title>
+    <description>Electric height-adjustable desk with memory controls.</description>
+    <category>Home | Office | Desks</category>
+    <sku>OFFICE-002</sku>
+    <price>549.99</price>
+    <stock>3</stock>
+  </product>
+</products>
