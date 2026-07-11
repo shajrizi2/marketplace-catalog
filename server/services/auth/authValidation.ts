@@ -10,3 +10,12 @@ export const loginCodeSchema = z
   .string()
   .trim()
   .regex(/^\d{6}$/, 'Login code must contain exactly 6 digits.');
+
+export const requestLoginCodeSchema = z.object({
+  email: authEmailSchema,
+});
+
+export const verifyLoginCodeSchema = z.object({
+  email: authEmailSchema,
+  code: loginCodeSchema,
+});

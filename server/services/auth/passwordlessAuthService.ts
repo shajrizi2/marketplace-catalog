@@ -9,12 +9,14 @@ export async function requestLoginCode(emailInput: string) {
   const user = await prisma.user.findUnique({ where: { email } })
 
   if (!user) {
-    throw new Error('No user exists with this email address.')
+    return false
   }
 
   const code = await createLoginCode(user.id)
 
   console.info(`[mock-email] Login code for ${email}: ${code}`)
+
+  return true
 }
 
 export async function verifyLoginCode(emailInput: string, codeInput: string) {
