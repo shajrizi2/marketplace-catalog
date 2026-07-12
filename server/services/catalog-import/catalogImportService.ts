@@ -23,6 +23,7 @@ export interface CatalogImportStats {
   inserted: number
   updated: number
   deleted: number
+  deletedCategories: number
   skipped: number
 }
 
@@ -88,6 +89,25 @@ async function createCategories(
       })),
       skipDuplicates: true,
     })
+  }
+}
+
+async function cleanupEmptyCategories(database: CategoryDatabase) {
+  let deletedCategories = 0
+
+  while (true) {
+    const deleted = await database.category.deleteMany({
+      where: {
+        products: { none: {} },
+        children: { none: {} },
+      },
+    })
+
+    deletedCategories += deleted.count
+
+    if (deleted.count === 0) {
+      return deletedCategories
+    }
   }
 }
 
@@ -175,6 +195,7 @@ async function applyStagedProducts(
         ],
       },
     })
+    const deletedCategories = await cleanupEmptyCategories(transaction)
 
     await transaction.productImportRow.deleteMany({ where: { importRunId } })
     await transaction.importRun.update({
@@ -186,6 +207,7 @@ async function applyStagedProducts(
       inserted: result.inserted,
       updated: result.updated,
       deleted: deleted.count,
+      deletedCategories,
     }
   })
 }
