@@ -1,13 +1,13 @@
 <script setup lang="ts">
-const isLoggingOut = ref(false)
+const isLoggingOut = ref(false);
 
 async function logout() {
-  isLoggingOut.value = true
+  isLoggingOut.value = true;
 
   try {
-    await $fetch('/api/auth/logout', { method: 'POST' })
+    await $fetch('/api/auth/logout', { method: 'POST' });
   } finally {
-    await navigateTo('/login')
+    await navigateTo('/login');
   }
 }
 </script>

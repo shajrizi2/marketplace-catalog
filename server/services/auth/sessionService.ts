@@ -1,14 +1,11 @@
-import { createHash, randomBytes } from 'node:crypto'
+import { randomBytes } from 'node:crypto'
 import type { Prisma } from '../../../generated/prisma/client'
 import { prisma } from '../../utils/prisma'
+import { hashSessionToken, isExpired } from './authHelpers'
 
 const SESSION_LIFETIME_MS = 7 * 24 * 60 * 60 * 1000
 
 type SessionDatabase = Pick<Prisma.TransactionClient, 'session'>
-
-function hashSessionToken(token: string) {
-  return createHash('sha256').update(token).digest('hex')
-}
 
 export async function createSession(
   userId: string,
@@ -33,7 +30,7 @@ export async function findValidSession(token: string) {
     include: { user: true },
   })
 
-  if (!session || session.expiresAt <= new Date()) {
+  if (!session || isExpired(session.expiresAt)) {
     return null
   }
 

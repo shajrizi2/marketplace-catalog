@@ -1,14 +1,11 @@
-import { createHash, randomInt } from 'node:crypto'
+import { randomInt } from 'node:crypto'
 import type { Prisma } from '../../../generated/prisma/client'
 import { prisma } from '../../utils/prisma'
+import { hashLoginCode, isExpired } from './authHelpers'
 
 const LOGIN_CODE_LIFETIME_MS = 10 * 60 * 1000
 
 type LoginCodeDatabase = Pick<Prisma.TransactionClient, 'loginCode'>
-
-function hashLoginCode(code: string) {
-  return createHash('sha256').update(code).digest('hex')
-}
 
 export async function createLoginCode(
   userId: string,
@@ -50,7 +47,7 @@ export async function consumeLoginCode(
 
   const now = new Date()
 
-  if (loginCode.expiresAt <= now) {
+  if (isExpired(loginCode.expiresAt, now)) {
     throw new Error('Login code has expired.')
   }
 

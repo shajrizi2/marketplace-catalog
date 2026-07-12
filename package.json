@@ -12,6 +12,7 @@
     "prisma:studio": "prisma studio",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "test": "vitest run",
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
